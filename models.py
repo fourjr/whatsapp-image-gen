@@ -4,12 +4,25 @@ from datetime import datetime
 from enum import Enum
 from io import BytesIO
 
-from PIL import Image
+from PIL import PILImage as PILImage
 
-from utils import get_member, get_message
+from utils import get_dimensions, get_member, get_message
 
 
-__all__ = ('Conversation', 'Metadata', 'Message', 'Member', 'Attachment', 'TickEnum')
+__all__ = ('Image', 'Conversation', 'Metadata', 'Message', 'Member', 'Attachment', 'TickEnum')
+
+
+class Image:
+    def __init__(self, fp):
+        if not fp.endswith('.png') and not fp.endswith('.jpg') and not fp.endswith('.jpeg'):
+            raise ValueError('File is not a supported image type (jpg/png)')
+
+        self.name = fp.split('/')[-1].replace('.png', '')
+        self.file_path = fp
+        self.size = get_dimensions(self.name)
+
+        img = PILImage.open(self.file_path).convert('RGBA')
+        self.image = img.resize(self.size, resample=PILImage.LANCZOS)
 
 
 class Conversation:
@@ -30,20 +43,13 @@ class Conversation:
         self.metadata = Metadata(self, data['metadata'])
         self.messages = [Message(self, i) for i in data['messages']]
 
-    @property
-    def wallpaper(self) -> Image:
-        if self._wallpaper:
-            return self._wallpaper
-
         if self.wallpaper_url:
             response = requests.get(self.wallpaper_url)
-            img = Image.open(BytesIO(response.content)).convert('RGBA')
+            img = PILImage.open(BytesIO(response.content)).convert('RGBA')
         else:
-            img = Image.open('default.png')
+            img = PILImage.open('images/wallpaper.png')
 
-        self._wallpaper = img.resize(self.size, resample=Image.LANCZOS)
-
-        return self._wallpaper
+        self.wallpaper = img.resize(self.size, resample=PILImage.LANCZOS)
 
 
 class Metadata:
@@ -58,20 +64,13 @@ class Metadata:
         self.last_seen = data['lastSeen']
         self.members = [Member(conversation, i) for i in data['members']]
 
-    @property
-    def icon(self) -> Image:
-        if self._icon:
-            return self._icon
-
         response = requests.get(self.icon_url)
-        img = Image.open(BytesIO(response.content)).convert('RGBA')
+        img = PILImage.open(BytesIO(response.content)).convert('RGBA')
 
         if img.size[0] != img.size[1]:
             raise ValueError('icon_url does not provide a square.')
 
-        self._icon = img
-
-        return self._icon
+        self.icon = img
 
 
 class Message:

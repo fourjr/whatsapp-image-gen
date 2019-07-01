@@ -1,19 +1,27 @@
 # TODO:
 - [x] Create models for everything
 - [ ] Trace over or get the SVG (convert to PNG) from whatsapp web for icons
-    - [ ] Video Call
-    - [ ] Audio Call
-    - [ ] Group Call
-    - [ ] More Options
-    - [ ] Emoji Selector
-    - [ ] Attach Files
-    - [ ] Camera
-    - [ ] Voice Record
-    - [ ] Deleted Message
-    - [ ] Starred Message
-    - [ ] Ticks (message sent indicator)
+    - [x] Video Call
+    - [x] Voice Call
+    - [x] Group Call
+    - [x] More Options
+    - [x] Emoji Selector
+    - [x] Attach Files
+    - [x] Camera
+    - [x] Voice Record
+    - [x] Deleted Message
+    - [x] Starred Message
+    - [x] Ticks (message sent indicator)
+        - [x] Single Tick
+        - [x] Double Tick
+        - [x] Blue Tick
+    - [x] Back button
     - [ ] Custom file attachment types
-    - [ ] Forward Message
+        - [x] Generic
+        - [x] Doc
+        - [x] PDF
+        - [ ] and more
+    - [x] Forward Message
     - [ ] Voice message icons
         - [ ] Voice Mic
         - [ ] Play Button
@@ -28,6 +36,7 @@
     - [ ] Signal Strength
     - [ ] Battery
 
+- [ ] Fill up dict in utils get_dimensions
 - [ ] Allow an infinite amount of messages to be specified in data.json but only grab the latest that can fit in the screen
 - [ ] Custom font size (percentage based)
 - [ ] 12/24 hour time
