@@ -40,14 +40,17 @@
 - [ ] Non-downloaded attachemnt support
 - [ ] Stickers
 - [ ] Markdown
-    - 3 Backticks` (Code Block)
-    - 1 Star* (Bold)
-    - 1 Underscore_ (Italic)
-    - 1 Curly Line~ (Strikethrough)
+    - [ ] 3 Backticks` (Code Block)
+    - [ ] 1 Star* (Bold)
+    - [ ] 1 Underscore_ (Italic)
+    - [ ] 1 Curly Line~ (Strikethrough)
 - [ ] Date indicator at the top
 - [ ] Location
     - [ ] Grab from Google API
 - [ ] Timezones
+- [ ] Group description at the top
+- [ ] WhatsApp Group Invites Preview
+    - [ ] Webscraping?
 
 # disclaimer
 
