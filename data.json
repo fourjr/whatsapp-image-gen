@@ -1,0 +1,43 @@
+{
+    "os": "android",
+    "mode": "private",
+    "warning": false,
+    "size": [720, 1480],
+    "wallpaper": null,
+    "metadata": {
+        "name": "Arshul",
+        "icon_url": null,
+        "lastSeen": "online",
+        "members": [
+            {
+                "id": 0,
+                "name": "Arshul",
+                "number": "+6591234567",
+                "saved": true,
+                "me": false,
+                "color": null
+            },
+            {
+                "id": 1,
+                "name": "jiarong",
+                "number": "+6590275588",
+                "saved": true,
+                "me": true,
+                "color": null
+            }
+        ]
+    },
+    "messages": [
+        {
+            "id": 0,
+            "author": 1,
+            "message": "admin is vspb too",
+            "timestamp": "2019-07-01T08:14:46.825Z",
+            "attachment": null,
+            "starred": false,
+            "deleted": false,
+            "ticks": 2,
+            "reply": null
+        }
+    ]
+}
