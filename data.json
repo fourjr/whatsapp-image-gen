@@ -11,7 +11,7 @@
         "members": [
             {
                 "id": 0,
-                "name": "pineapple",
+                "name": "krysh",
                 "number": "+6591234567",
                 "saved": true,
                 "me": false,
@@ -27,12 +27,59 @@
             }
         ]
     },
-    "messages": [
+    "messages": [        
         {
             "id": 0,
-            "author": 1,
-            "message": "admin is too",
+            "author": 0,
+            "message": "porn",
             "timestamp": "2019-07-01T08:14:46.825Z",
+            "attachment": null,
+            "starred": false,
+            "deleted": false,
+            "ticks": 2,
+            "reply": null
+        },
+        {
+            "id": 1,
+            "author": 1,
+            "message": "yes!",
+            "timestamp": "2019-07-01T08:14:49.825Z",
+            "attachment": null,
+            "starred": false,
+            "deleted": false,
+            "ticks": 2,
+            "reply": null
+        },
+        
+        {
+            "id": 1,
+            "author": 1,
+            "message": "yes!",
+            "timestamp": "2019-07-01T08:14:49.825Z",
+            "attachment": null,
+            "starred": false,
+            "deleted": false,
+            "ticks": 2,
+            "reply": null
+        },
+        
+        {
+            "id": 1,
+            "author": 1,
+            "message": "yes!",
+            "timestamp": "2019-07-01T08:14:49.825Z",
+            "attachment": null,
+            "starred": false,
+            "deleted": false,
+            "ticks": 2,
+            "reply": null
+        },
+        
+        {
+            "id": 1,
+            "author": 1,
+            "message": "yes!",
+            "timestamp": "2019-07-01T08:14:49.825Z",
             "attachment": null,
             "starred": false,
             "deleted": false,
