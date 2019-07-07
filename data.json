@@ -5,13 +5,13 @@
     "size": [720, 1480],
     "wallpaper": null,
     "metadata": {
-        "name": "pineapple",
+        "name": "John",
         "icon_url": null,
         "lastSeen": "online",
         "members": [
             {
                 "id": 0,
-                "name": "krysh",
+                "name": "John",
                 "number": "+6591234567",
                 "saved": true,
                 "me": false,
@@ -31,7 +31,7 @@
         {
             "id": 0,
             "author": 0,
-            "message": "porn",
+            "message": "i dont like to say yes",
             "timestamp": "2019-07-01T08:14:46.825Z",
             "attachment": null,
             "starred": false,

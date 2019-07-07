@@ -77,4 +77,6 @@ class Colors:
     OTHER = (255, 255, 255)
     WHITE = (255, 255, 255)
     LIGHT_GREY = (205, 205, 205)
-    GREEN = (0, 136, 122)
+    GREEN = (7, 94, 85)
+    DARK_GREEN = (5, 76, 68)
+    BEIGE = (229, 221, 213)
