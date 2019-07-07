@@ -63,14 +63,15 @@ class Icon:
 
 
 class Conversation:
-    __slots__ = ('os', 'font_25', 'font_35', 'font_40', 'bold_font', 'mode', 'warning', 'size', 'wallpaper_url', 'metadata', 'messages', 'sorted_messages', 'images')
+    __slots__ = ('os', 'font_multiplier', 'font_25', 'font_35', 'font_40', 'bold_font_35', 'mode', 'warning', 'size', 'wallpaper_url', 'metadata', 'messages', 'sorted_messages', 'images')
 
     def __init__(self, data):
         self.os = data['os'].lower()
-        self.font_25 = ImageFont.truetype(f'fonts/{self.os.title()}.ttf', 25)
-        self.font_35 = ImageFont.truetype(f'fonts/{self.os.title()}.ttf', 35)
-        self.font_40 = ImageFont.truetype(f'fonts/{self.os.title()}.ttf', 40)
-        self.bold_font = ImageFont.truetype(f'fonts/{self.os.title()}-Bold.ttf', 35)
+        self.font_multiplier = data['fontMultiplier']
+        self.font_25 = ImageFont.truetype(f'fonts/{self.os.title()}.ttf', round(self.font_multiplier * 25))
+        self.font_35 = ImageFont.truetype(f'fonts/{self.os.title()}.ttf', round(self.font_multiplier * 35))
+        self.bold_font_35 = ImageFont.truetype(f'fonts/{self.os.title()}-Bold.ttf', round(self.font_multiplier * 35))
+        self.font_40 = ImageFont.truetype(f'fonts/{self.os.title()}.ttf', round(self.font_multiplier * 40))
 
         if self.os not in {'android', 'ios'}:
             raise ValueError('OS can only be android or iOS')
@@ -137,7 +138,7 @@ class Conversation:
         bar.alpha_composite(group_icon, (60, 20))
 
         # subject
-        draw.text((60 + icon_size + 10, 20), self.metadata.group_name, fill=Colors.WHITE, font=self.bold_font)
+        draw.text((60 + icon_size + 10, 20), self.metadata.group_name, fill=Colors.WHITE, font=self.bold_font_35)
         draw.text((60 + icon_size + 10, 65), self.metadata.subtitle, fill=Colors.WHITE, font=self.font_25)
 
         # call (voice/video)
@@ -265,7 +266,7 @@ class Message:
         size = list(size)
         if not self.author.me and self._conversation.mode == 'group':
             # ensures that the name isnt too close to edge
-            size[0] = max(size[0], self._conversation.bold_font.getsize(self.author.name)[0])
+            size[0] = max(size[0], self._conversation.bold_font_35.getsize(self.author.name)[0])
 
         size = [size[0] + 17 * 2, size[1] + 13 * 2]
         offset = 0
@@ -288,7 +289,7 @@ class Message:
         message_draw.text_box((17, 13 + offset), self.cut_content, (0, 0, 0), self._conversation.font_35, 530, spacing=4)
 
         if not self.author.me and self._conversation.mode == 'group':
-            message_draw.text((17, 13), self.author.name, self.author.rgb_color, self._conversation.bold_font)
+            message_draw.text((17, 13), self.author.name, self.author.rgb_color, self._conversation.bold_font_35)
 
         return message
 

@@ -3,6 +3,7 @@
     "mode": "private",
     "warning": false,
     "size": [720, 1480],
+    "fontMultiplier": 1.0,
     "wallpaper": null,
     "metadata": {
         "name": "John",
@@ -31,7 +32,7 @@
         {
             "id": 0,
             "author": 0,
-            "message": "i dont like to say yes",
+            "message": "i dont like to say yes 📸",
             "timestamp": "2019-07-01T08:14:46.825Z",
             "attachment": null,
             "starred": false,

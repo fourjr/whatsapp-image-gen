@@ -36,9 +36,12 @@
     - [ ] Signal Strength
     - [ ] Battery
 
-- [ ] Fill up dict in utils get_dimensions
-- [ ] Allow an infinite amount of messages to be specified in data.json but only grab the latest that can fit in the screen
-- [ ] Custom font size (percentage based)
+- [ ] Notification bar
+- [x] Top bar
+- [x] Bottom chatbar    
+- [x] Allow an infinite amount of messages to be specified in data.json but only grab the latest that can fit in the screen
+- [x] Custom font size (percentage based)
+    - [ ] Fix issues with big font sizes, scaling (try 2.3)
 - [ ] 12/24 hour time
 - [ ] Support iOS
 - [ ] Emoji support
